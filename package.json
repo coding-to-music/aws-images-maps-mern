@@ -1,9 +1,10 @@
 {
-  "name": "flex-start",
+  "name": "aws-images-maps-mern",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku",
     "start": "node app.js",
     "server": "nodemon app.js",
     "server:debug": "nodemon --inspect app.js",
@@ -14,7 +15,7 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "engines": {
-    "node": "10.15.1"
+    "node": "16.x"
   },
   "author": "",
   "license": "ISC",
@@ -42,5 +43,9 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
-  }
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "/frontend/node_modules"
+  ]
 }
